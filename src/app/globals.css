@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f5ef;
+  --foreground: #151714;
+  --accent: #0a5a42;
+  --accent-contrast: #ffffff;
+  --accent-muted: #006c55;
+  --line: #f5a623;
+  --border: #ded6c6;
+  --control: #ffffff;
+  --control-hover: #f5efe4;
+  --panel: #0a5a42;
+  --panel-border: #123b2e;
+  --panel-shadow: rgb(12 52 40 / 0.2);
+  --surface: rgb(255 255 255 / 0.7);
+  --surface-strong: #ffffff;
+  --surface-warm: #f8f2df;
+  --text-muted: #3c4139;
+  --text-subtle: #4a5146;
+  --toggle-track: #e6decd;
+  --toggle-thumb: #ffffff;
+}
+
+[data-theme="dark"] {
+  --background: #0d1412;
+  --foreground: #f5f2e9;
+  --accent: #4fd0a2;
+  --accent-contrast: #06261c;
+  --accent-muted: #7be4bd;
+  --line: #f5a623;
+  --border: #38534a;
+  --control: #15231f;
+  --control-hover: #20342e;
+  --panel: #063a2c;
+  --panel-border: #2f8066;
+  --panel-shadow: rgb(0 0 0 / 0.36);
+  --surface: rgb(18 28 25 / 0.88);
+  --surface-strong: #15231f;
+  --surface-warm: #1f2d27;
+  --text-muted: #c5d1c8;
+  --text-subtle: #aebdb3;
+  --toggle-track: #2a4038;
+  --toggle-thumb: #7be4bd;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-display: var(--font-barlow-condensed);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+button,
+a {
+  touch-action: manipulation;
+}
+
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.player-highlight {
+  border-radius: 42%;
+  animation: player-highlight 1.7s ease-in-out infinite;
+}
+
+@keyframes player-highlight {
+  0%,
+  100% {
+    --tw-ring-color: rgb(255 255 255 / 0.78);
+    box-shadow: 0 0 0 0 rgb(255 255 255 / 0.2);
+  }
+
+  50% {
+    --tw-ring-color: rgb(79 208 162 / 0.9);
+    box-shadow: 0 0 0 7px rgb(79 208 162 / 0.24);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .player-highlight {
+    animation: none;
+  }
+}

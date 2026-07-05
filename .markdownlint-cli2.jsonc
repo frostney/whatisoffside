@@ -1,0 +1,14 @@
+{
+  "config": {
+    "MD013": false
+  },
+  "globs": [
+    "README.md",
+    "AGENTS.md",
+    "TECH_STACK.md",
+    "VISION.md",
+    "DEFINITION_OF_READY.md",
+    "DEFINITION_OF_DONE.md",
+    "docs/**/*.md"
+  ]
+}
