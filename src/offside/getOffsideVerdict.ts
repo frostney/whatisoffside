@@ -25,7 +25,7 @@ export function getOffsideVerdict(input: OffsideInput) {
   if (!input.fromTeammate) {
     return {
       isOffside: false,
-      reason: "Offside is judged from a teammate's deliberate play or touch.",
+      reason: "Offside is judged from a teammate's play or touch.",
     };
   }
 
@@ -60,6 +60,6 @@ export function getOffsideVerdict(input: OffsideInput) {
   return {
     isOffside: true,
     reason:
-      "The attacker was beyond the ball and second-last opponent when the teammate played the ball, then became active.",
+      "The attacker was beyond the ball and second-last opponent when the teammate played or touched the ball, then became active.",
   };
 }

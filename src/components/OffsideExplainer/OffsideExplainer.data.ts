@@ -4,7 +4,7 @@ export const teachingSlides = [
   {
     eyebrow: "The one rule everyone gets stuck on",
     title: "Offside,\non the board",
-    body: "A player is in an offside position if they're closer to the goal than both the ball and the second-last defender at the instant a teammate plays the ball. Everything below is the same pitch, attacking left to right. The amber line is the one to watch.",
+    body: "A player is in an offside position if they're in the opponents' half and closer to the goal line than both the ball and the second-last opponent when a teammate plays or touches the ball. Everything below is the same pitch, attacking left to right. The amber line is the one to watch.",
     focus: "passer",
     scene: {
       attackerX: 78,
@@ -17,7 +17,7 @@ export const teachingSlides = [
   {
     eyebrow: "What it is / 01",
     title: "The line and the position",
-    body: "The amber line sits level with the second-last defender, usually the last outfield player, since the keeper is deepest. The glowing attacker is past the line and ahead of the ball, so he's in an offside position. Note the word position: on its own it isn't an offence yet.",
+    body: "The amber line sits level with the second-last opponent, usually the last outfield defender, since the keeper is deepest. The glowing attacker is past the line and ahead of the ball, so he's in an offside position. Note the word position: on its own it isn't an offence yet.",
     focus: "runner",
     scene: {
       attackerX: 82,
@@ -31,7 +31,7 @@ export const teachingSlides = [
   {
     eyebrow: "The escape hatch / 02",
     title: "Level is onside",
-    body: "If the attacker is level with the last defender, or level with the last two, he is onside. Ties go to the attacker. That's why you'll see players try to time their run to stay shoulder-to-shoulder with the back line.",
+    body: "If the attacker is level with the second-last opponent, or level with the last two opponents, he is onside. Ties go to the attacker. That's why you'll see players try to time their run to stay shoulder-to-shoulder with the back line.",
     focus: "runner",
     scene: {
       attackerX: 70,
@@ -46,7 +46,7 @@ export const teachingSlides = [
   {
     eyebrow: "The bit everyone misses / 03",
     title: "It's judged when the ball is played, not received",
-    body: "This is the heart of it. The attacker is onside at the instant the pass is struck. He then sprints in behind and collects it well past the defenders, and it's still legal, because the only frame that matters is the moment his teammate played the ball.",
+    body: "This is the heart of it. The attacker is onside when the teammate plays or touches the ball. He then sprints in behind and collects it well past the defenders, and it's still legal, because the offside position is judged at that earlier contact, not when the pass arrives.",
     focus: "runner",
     scene: {
       attackerX: 64,
@@ -76,8 +76,8 @@ export const teachingSlides = [
   },
   {
     eyebrow: "The exemptions / 05",
-    title: "No offside from a restart",
-    body: "Offside is never called directly from a throw-in, corner kick, or goal kick. Here the ball comes from a throw-in on the touchline, so the attacker can be as far forward as he likes and still be onside the moment he receives it.",
+    title: "Three restart exemptions",
+    body: "Offside is never called directly from a throw-in, corner kick, or goal kick. Other restarts, including free kicks and dropped balls, can still produce offside. Here the ball comes from a throw-in on the touchline, so the attacker can be as far forward as he likes and still be onside the moment he receives it.",
     focus: "runner",
     scene: {
       attackerX: 86,
@@ -96,7 +96,7 @@ export const interactiveSlideIndex = teachingSlides.length;
 export const interactiveSlide = {
   eyebrow: "Your turn / drag",
   title: "Move the pieces, watch the call",
-  body: "Drag the passing teammate, the highlighted runner, or the last defender. The ball moves with the passer, and the defender carries the amber offside line.",
+  body: "Drag the passing teammate, the highlighted runner, or the second-last defender. The ball moves with the passer, and the defender carries the amber offside line.",
   focus: "interactive",
   scene: {
     attackerX: 78,

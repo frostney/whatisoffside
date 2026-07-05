@@ -235,11 +235,11 @@ function getLastDefenderPiece({
   scene: SlideScene;
 }): ScenePiece {
   return {
-    alt: "Last defender in a blue jersey",
+    alt: "Second-last defender in a blue jersey",
     className: getFocusClassName(scene.focus, "line"),
     drag: createDragConfig({
       isInteractive,
-      label: "Last defender carrying the offside line",
+      label: "Second-last defender carrying the offside line",
       maxX: 90,
       maxY: 76,
       minX: 50,

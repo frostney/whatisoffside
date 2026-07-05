@@ -19,7 +19,7 @@
     "check": "bun run format:check && bun run lint && bun run test && bun run typecheck && bun run build && bun run check:markdown && bun run check:knip && bun run check:fallow"
   },
   "dependencies": {
-    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
     "lucide-react": "^1.23.0",
     "next": "16.2.10",
     "react": "19.2.4",

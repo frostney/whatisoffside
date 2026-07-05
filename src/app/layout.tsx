@@ -1,8 +1,19 @@
-import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Barlow_Condensed, Inter, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+
+const siteName = "What Is Offside?";
+const siteDescription =
+  "A visual, plain-English guide to football's offside law, examples, exceptions, and active-play decisions.";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "https://whatisoffside.vercel.app");
+const socialImageAlt =
+  "What Is Offside? A plain-English football rule explainer shown over a football pitch.";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -22,9 +33,63 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "What Is Offside?",
-  description:
-    "A visual, plain-English guide to football's offside law, examples, and exceptions.",
+  metadataBase: new URL(siteUrl),
+  applicationName: siteName,
+  title: {
+    default: siteName,
+    template: `%s | ${siteName}`,
+  },
+  description: siteDescription,
+  keywords: [
+    "offside rule",
+    "football offside",
+    "soccer offside",
+    "IFAB Law 11",
+    "football laws",
+    "offside explained",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: siteName,
+    description: siteDescription,
+    url: "/",
+    siteName,
+    locale: "en_GB",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: socialImageAlt,
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteName,
+    description: siteDescription,
+    images: [
+      {
+        url: "/twitter-image.png",
+        alt: socialImageAlt,
+      },
+    ],
+  },
+  category: "education",
 };
 
 const themeSeedScript = `
@@ -54,7 +119,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full">
         {children}
-        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

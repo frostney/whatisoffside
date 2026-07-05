@@ -145,7 +145,7 @@ function getDecisionState({
   secondLastDefenderX: number;
 }) {
   const reasons = [
-    ["Ahead of the second-last defender", attackerX > secondLastDefenderX],
+    ["Ahead of the second-last opponent", attackerX > secondLastDefenderX],
     ["Ahead of the ball", attackerX > ballX],
     ["Inside the opponents' half", attackerX > 50],
   ] as const;
@@ -232,8 +232,9 @@ function ReasonList({
 function InteractionHint() {
   return (
     <p className="mt-3 font-mono text-[var(--text-subtle)] text-xs leading-5">
-      Drag the passing teammate, the highlighted runner, or the last defender.
-      Keyboard: tab to a piece, then arrow keys. Shift makes bigger jumps.
+      Drag the passing teammate, the highlighted runner, or the second-last
+      defender. Keyboard: tab to a piece, then arrow keys. Shift makes bigger
+      jumps.
     </p>
   );
 }

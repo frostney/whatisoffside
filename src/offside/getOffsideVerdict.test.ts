@@ -1,7 +1,7 @@
 import { expect, test } from "bun:test";
 import { getOffsideVerdict } from "./getOffsideVerdict";
 
-test("flags an active attacker beyond the ball and second-last defender", () => {
+test("flags an active attacker beyond the ball and second-last opponent", () => {
   const verdict = getOffsideVerdict({
     attackerX: 78,
     ballX: 58,
