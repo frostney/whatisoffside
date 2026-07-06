@@ -25,8 +25,8 @@ export function SlidePanel({
   theme: Theme;
 }) {
   return (
-    <div className="flex min-h-0 flex-col gap-3 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-4 transition-colors duration-300 ease-out sm:p-6 lg:min-h-[calc(100vh-2rem)] lg:overflow-hidden lg:gap-6 lg:p-7">
-      <div className="flex shrink-0 flex-wrap items-center justify-between gap-3">
+    <div className="flex min-h-0 flex-col gap-2 overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 transition-colors duration-300 ease-out sm:p-6 lg:min-h-[calc(100vh-2rem)] lg:gap-6 lg:overflow-hidden lg:p-7">
+      <div className="flex shrink-0 flex-wrap items-center justify-between gap-2 sm:gap-3">
         <p className="font-mono font-semibold text-[var(--line)] text-xs uppercase tracking-[0.22em]">
           {slide.eyebrow}
         </p>
@@ -53,15 +53,15 @@ export function SlidePanel({
 
 function SlideCopy({ slide }: { slide: Slide }) {
   return (
-    <div className="min-h-0 flex-1 space-y-5 pr-1 lg:overflow-y-auto lg:[scrollbar-gutter:stable]">
-      <h1 className="whitespace-pre-line text-balance font-display font-bold text-5xl uppercase leading-[0.94] tracking-normal sm:text-6xl lg:text-7xl">
+    <div className="min-h-0 flex-1 space-y-2 overflow-hidden pr-1 sm:space-y-4 lg:overflow-y-auto lg:[scrollbar-gutter:stable]">
+      <h1 className="whitespace-pre-line text-balance font-display font-bold text-4xl uppercase leading-[0.92] tracking-normal sm:text-6xl lg:text-7xl">
         {slide.title}
       </h1>
-      <p className="max-w-2xl text-pretty text-[var(--text-muted)] text-sm leading-6 sm:text-xl sm:leading-8">
+      <p className="max-w-2xl overflow-hidden text-pretty text-[var(--text-muted)] text-xs leading-5 [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:3] sm:text-xl sm:leading-8 sm:[-webkit-line-clamp:4] lg:[display:block]">
         {slide.body}
       </p>
       <a
-        className="inline-flex font-bold text-[var(--accent-muted)] text-sm underline decoration-[color-mix(in_srgb,var(--accent-muted)_30%,transparent)] underline-offset-4 hover:decoration-[var(--accent-muted)]"
+        className="inline-flex font-bold text-[var(--accent-muted)] text-xs underline decoration-[color-mix(in_srgb,var(--accent-muted)_30%,transparent)] underline-offset-4 hover:decoration-[var(--accent-muted)] sm:text-sm"
         href="https://www.theifab.com/laws/latest/offside/"
         rel="noreferrer"
         target="_blank"
@@ -86,10 +86,10 @@ function SlideActions({
   slideIndex: number;
 }) {
   return (
-    <div className="flex shrink-0 flex-wrap items-center gap-3 pt-1">
+    <div className="flex shrink-0 flex-wrap items-center gap-2 pt-1 sm:gap-3">
       <button
         aria-label="Back"
-        className="grid h-12 w-12 place-items-center rounded-full border border-[var(--border)] bg-[var(--control)] text-[var(--foreground)] transition-[background-color,border-color,color,transform] duration-200 ease-out hover:border-[var(--accent)] hover:bg-[var(--control-hover)] active:scale-95 disabled:cursor-not-allowed disabled:border-[var(--border)] disabled:bg-[var(--control)] disabled:text-[var(--text-muted)] disabled:opacity-100 disabled:active:scale-100"
+        className="grid h-10 w-10 place-items-center rounded-full border border-[var(--border)] bg-[var(--control)] text-[var(--foreground)] transition-[background-color,border-color,color,transform] duration-200 ease-out hover:border-[var(--accent)] hover:bg-[var(--control-hover)] active:scale-95 disabled:cursor-not-allowed disabled:border-[var(--border)] disabled:bg-[var(--control)] disabled:text-[var(--text-muted)] disabled:opacity-100 disabled:active:scale-100 sm:h-12 sm:w-12"
         disabled={slideIndex === 0}
         onClick={onPrevious}
         type="button"
@@ -98,7 +98,7 @@ function SlideActions({
       </button>
       <button
         aria-label={isInteractiveSlide ? "Last slide" : "Next slide"}
-        className="grid h-12 w-12 place-items-center rounded-full border border-transparent bg-[var(--accent)] text-[var(--accent-contrast)] transition-[background-color,border-color,color,filter,transform] duration-200 ease-out hover:brightness-95 active:scale-95 disabled:cursor-not-allowed disabled:border-[var(--border)] disabled:bg-transparent disabled:text-[var(--text-muted)] disabled:opacity-100 disabled:hover:brightness-100 disabled:active:scale-100"
+        className="grid h-10 w-10 place-items-center rounded-full border border-transparent bg-[var(--accent)] text-[var(--accent-contrast)] transition-[background-color,border-color,color,filter,transform] duration-200 ease-out hover:brightness-95 active:scale-95 disabled:cursor-not-allowed disabled:border-[var(--border)] disabled:bg-transparent disabled:text-[var(--text-muted)] disabled:opacity-100 disabled:hover:brightness-100 disabled:active:scale-100 sm:h-12 sm:w-12"
         disabled={isInteractiveSlide}
         onClick={onNext}
         type="button"
@@ -106,7 +106,7 @@ function SlideActions({
         <ArrowRight aria-hidden="true" size={22} strokeWidth={2.4} />
       </button>
       <button
-        className="rounded-md border border-transparent px-5 py-3 font-bold text-[var(--accent)] transition-[background-color,border-color,color,transform] duration-200 ease-out hover:border-[var(--border)] hover:bg-[var(--control-hover)] active:scale-[0.98] disabled:cursor-not-allowed disabled:border-[var(--border)] disabled:bg-transparent disabled:text-[var(--text-muted)] disabled:opacity-100 disabled:hover:border-[var(--border)] disabled:hover:bg-transparent disabled:active:scale-100"
+        className="rounded-md border border-transparent px-3 py-2 font-bold text-[var(--accent)] text-sm transition-[background-color,border-color,color,transform] duration-200 ease-out hover:border-[var(--border)] hover:bg-[var(--control-hover)] active:scale-[0.98] disabled:cursor-not-allowed disabled:border-[var(--border)] disabled:bg-transparent disabled:text-[var(--text-muted)] disabled:opacity-100 disabled:hover:border-[var(--border)] disabled:hover:bg-transparent disabled:active:scale-100 sm:px-5 sm:py-3 sm:text-base"
         disabled={isInteractiveSlide}
         onClick={onSkip}
         type="button"

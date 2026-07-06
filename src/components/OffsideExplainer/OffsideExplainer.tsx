@@ -60,8 +60,8 @@ export function OffsideExplainer() {
   );
 
   return (
-    <main className="min-h-dvh bg-[var(--background)] text-[var(--foreground)] lg:h-dvh lg:overflow-hidden">
-      <section className="mx-auto grid min-h-dvh w-full max-w-7xl content-start gap-3 px-3 py-3 sm:px-5 lg:h-dvh lg:content-stretch lg:grid-cols-[0.92fr_1.08fr] lg:grid-rows-1 lg:gap-6 lg:px-8">
+    <main className="h-dvh overflow-hidden bg-[var(--background)] text-[var(--foreground)]">
+      <section className="mx-auto grid h-full w-full max-w-7xl grid-rows-[minmax(0,0.42fr)_minmax(0,0.58fr)] gap-2 overflow-hidden px-2 py-2 sm:px-5 sm:py-3 lg:h-dvh lg:content-stretch lg:grid-cols-[0.92fr_1.08fr] lg:grid-rows-1 lg:gap-6 lg:px-8">
         <SlidePanel
           isInteractiveSlide={isInteractiveSlide}
           onNext={() =>
@@ -81,7 +81,7 @@ export function OffsideExplainer() {
           theme={theme}
         />
 
-        <div className="flex min-h-0 flex-col gap-3 rounded-lg border border-[var(--panel-border)] bg-[var(--panel)] p-3 text-white shadow-2xl shadow-[var(--panel-shadow)] transition-[background-color,border-color,box-shadow] duration-300 ease-out sm:p-4 lg:min-h-[calc(100vh-2rem)] lg:overflow-hidden lg:gap-4">
+        <div className="flex min-h-0 flex-col gap-2 overflow-hidden rounded-lg border border-[var(--panel-border)] bg-[var(--panel)] p-2 text-white shadow-2xl shadow-[var(--panel-shadow)] transition-[background-color,border-color,box-shadow] duration-300 ease-out sm:p-4 lg:min-h-[calc(100vh-2rem)] lg:gap-4 lg:overflow-hidden">
           <FieldGraphic
             isInteractive={isInteractiveSlide}
             positionHandlers={{

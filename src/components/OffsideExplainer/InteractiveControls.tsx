@@ -21,8 +21,8 @@ export function InteractiveControls({
   verdict: Verdict;
 }) {
   return (
-    <div className="grid min-h-0 gap-3 lg:grid-cols-[1fr_1fr]">
-      <div className="grid content-start gap-3 rounded-lg bg-[var(--surface-strong)] p-3 text-[var(--foreground)] transition-[background-color,box-shadow] duration-300 ease-out lg:p-4">
+    <div className="grid min-h-0 shrink-0 grid-cols-[0.9fr_1.1fr] gap-2 lg:grid-cols-[1fr_1fr] lg:gap-3">
+      <div className="grid content-start gap-2 rounded-lg bg-[var(--surface-strong)] p-2 text-[var(--foreground)] transition-[background-color,box-shadow] duration-300 ease-out lg:gap-3 lg:p-4">
         <ActiveToggle isActive={isActive} onIsActiveChange={onIsActiveChange} />
         <RestartPicker onRestartChange={onRestartChange} restart={restart} />
       </div>
@@ -46,10 +46,10 @@ function ActiveToggle({
   onIsActiveChange: (value: boolean) => void;
 }) {
   return (
-    <label className="flex items-center gap-3 rounded-md border border-[var(--border)] px-3 py-2 font-semibold text-sm transition-[border-color,background-color] duration-200 ease-out hover:border-[var(--accent)] hover:bg-[var(--control-hover)]">
+    <label className="flex items-center gap-2 rounded-md border border-[var(--border)] px-2 py-1.5 font-semibold text-[11px] transition-[border-color,background-color] duration-200 ease-out hover:border-[var(--accent)] hover:bg-[var(--control-hover)] sm:gap-3 sm:px-3 sm:py-2 sm:text-sm">
       <input
         checked={isActive}
-        className="h-5 w-5 accent-[var(--accent)]"
+        className="h-4 w-4 accent-[var(--accent)] sm:h-5 sm:w-5"
         onChange={(event) => onIsActiveChange(event.target.checked)}
         type="checkbox"
       />
@@ -66,12 +66,12 @@ function RestartPicker({
   restart: Restart;
 }) {
   return (
-    <div className="grid gap-2">
-      <span className="font-semibold text-sm">Restart</span>
-      <div className="flex flex-wrap gap-2">
+    <div className="grid gap-1.5 sm:gap-2">
+      <span className="font-semibold text-[11px] sm:text-sm">Restart</span>
+      <div className="flex flex-wrap gap-1.5 sm:gap-2">
         {restartOptions.map((option) => (
           <button
-            className={`rounded-md border px-3 py-2 font-bold text-xs transition-[background-color,border-color,color,transform] duration-200 ease-out active:scale-[0.97] ${
+            className={`rounded-md border px-2 py-1.5 font-bold text-[10px] transition-[background-color,border-color,color,transform] duration-200 ease-out active:scale-[0.97] sm:px-3 sm:py-2 sm:text-xs ${
               restart === option.value
                 ? "border-[var(--accent)] bg-[var(--accent)] text-[var(--accent-contrast)]"
                 : "border-[var(--border)] bg-[var(--control)] text-[var(--foreground)] hover:border-[var(--accent)] hover:bg-[var(--control-hover)]"
@@ -112,18 +112,18 @@ function DecisionCard({
   });
 
   return (
-    <article className="rounded-lg bg-[var(--surface-warm)] p-4 text-[var(--foreground)] transition-[background-color,box-shadow] duration-300 ease-out">
-      <p className="font-semibold text-[var(--accent-muted)] text-sm uppercase tracking-[0.16em]">
+    <article className="overflow-hidden rounded-lg bg-[var(--surface-warm)] p-2.5 text-[var(--foreground)] transition-[background-color,box-shadow] duration-300 ease-out sm:p-4">
+      <p className="font-semibold text-[10px] text-[var(--accent-muted)] uppercase tracking-[0.16em] sm:text-sm">
         Verdict
       </p>
       <VerdictStamp decision={decision} />
-      <p className="mt-3 text-[var(--text-muted)] text-sm leading-6">
+      <p className="mt-2 text-[var(--text-muted)] text-xs leading-4 sm:mt-3 sm:text-sm sm:leading-6">
         {decision.note}
       </p>
       <ReasonList reasons={decision.reasons} />
       <InteractionHint />
       {!isActive || verdict.isOffside ? (
-        <p className="mt-3 text-[var(--text-muted)] text-xs leading-5">
+        <p className="mt-3 hidden text-[var(--text-muted)] text-xs leading-5 sm:block">
           {verdict.reason}
         </p>
       ) : null}
@@ -198,7 +198,7 @@ function VerdictStamp({
 
   return (
     <h2
-      className={`mt-2 inline-flex rounded-md border-2 px-3 py-2 font-black text-2xl uppercase tracking-[0.08em] ${stampClassName}`}
+      className={`mt-1.5 inline-flex rounded-md border-2 px-2 py-1 font-black text-lg uppercase tracking-[0.08em] sm:mt-2 sm:px-3 sm:py-2 sm:text-2xl ${stampClassName}`}
     >
       {decision.stamp}
     </h2>
@@ -211,7 +211,7 @@ function ReasonList({
   reasons: ReturnType<typeof getDecisionState>["reasons"];
 }) {
   return (
-    <ul className="mt-3 grid gap-2">
+    <ul className="mt-3 hidden gap-2 sm:grid">
       {reasons.map(([label, ok]) => (
         <li
           className="flex items-center gap-2 text-[var(--text-muted)] text-sm"
@@ -231,7 +231,7 @@ function ReasonList({
 
 function InteractionHint() {
   return (
-    <p className="mt-3 font-mono text-[var(--text-subtle)] text-xs leading-5">
+    <p className="mt-3 hidden font-mono text-[var(--text-subtle)] text-xs leading-5 lg:block">
       Drag the passing teammate, the highlighted runner, or the second-last
       defender. Keyboard: tab to a piece, then arrow keys. Shift makes bigger
       jumps.

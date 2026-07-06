@@ -64,7 +64,7 @@ export function FieldGraphic({
 
   return (
     <div
-      className="relative min-h-[220px] flex-1 overflow-hidden rounded-lg border border-white/35 bg-[#147a52] transition-[border-color,box-shadow] duration-300 ease-out sm:min-h-[300px] lg:min-h-[360px]"
+      className="relative min-h-[178px] flex-1 overflow-hidden rounded-lg border border-white/35 bg-[#147a52] touch-none transition-[border-color,box-shadow] duration-300 ease-out sm:min-h-[300px] lg:min-h-[360px]"
       ref={fieldRef}
     >
       <Image
@@ -507,16 +507,40 @@ function DraggableSceneImage({
       event.preventDefault();
       updateDrag(event.clientX, event.clientY);
     };
+    const handleTouchMove = (event: TouchEvent) => {
+      const touch = event.touches[0];
+
+      if (!touch) {
+        return;
+      }
+
+      event.preventDefault();
+      updateDrag(touch.clientX, touch.clientY);
+    };
     const handleRelease = () => setIsDragging(false);
+    const previousBodyOverflow = document.body.style.overflow;
+    const previousBodyUserSelect = document.body.style.userSelect;
+    document.body.style.overflow = "hidden";
+    document.body.style.userSelect = "none";
 
     window.addEventListener("pointermove", handleMove);
     window.addEventListener("pointerup", handleRelease);
+    window.addEventListener("pointercancel", handleRelease);
+    window.addEventListener("touchmove", handleTouchMove, { passive: false });
+    window.addEventListener("touchend", handleRelease);
+    window.addEventListener("touchcancel", handleRelease);
     window.addEventListener("mousemove", handleMove);
     window.addEventListener("mouseup", handleRelease);
 
     return () => {
+      document.body.style.overflow = previousBodyOverflow;
+      document.body.style.userSelect = previousBodyUserSelect;
       window.removeEventListener("pointermove", handleMove);
       window.removeEventListener("pointerup", handleRelease);
+      window.removeEventListener("pointercancel", handleRelease);
+      window.removeEventListener("touchmove", handleTouchMove);
+      window.removeEventListener("touchend", handleRelease);
+      window.removeEventListener("touchcancel", handleRelease);
       window.removeEventListener("mousemove", handleMove);
       window.removeEventListener("mouseup", handleRelease);
     };
@@ -556,6 +580,17 @@ function DraggableSceneImage({
         if (event.currentTarget.hasPointerCapture(event.pointerId)) {
           event.currentTarget.releasePointerCapture(event.pointerId);
         }
+      }}
+      onTouchStart={(event) => {
+        const touch = event.touches[0];
+
+        if (!touch) {
+          return;
+        }
+
+        event.preventDefault();
+        setIsDragging(true);
+        updateDrag(touch.clientX, touch.clientY);
       }}
       ref={buttonRef}
       style={dragStyle}
