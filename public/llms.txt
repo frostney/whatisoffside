@@ -1,0 +1,22 @@
+# What Is Offside?
+
+> What Is Offside? is a visual, plain-English guide to football's offside law, examples, exceptions, and active-play decisions.
+
+- Canonical: https://www.whatisoffside.com
+- Source: IFAB Law 11
+
+## The law
+
+A player is in an offside position if they're in the opponents' half and closer to the goal line than both the ball and the second-last opponent when a teammate plays or touches the ball.
+
+Position is not an offence. If the attacker is level with the second-last opponent, or level with the last two opponents, they are onside. The position is judged when the ball is played, not when it is received.
+
+Standing in an offside position is not penalised unless that player becomes involved in active play.
+
+## Exceptions
+
+Offside is never called directly from a throw-in, corner kick, or goal kick. Other restarts, including free kicks and dropped balls, can still produce offside.
+
+## What this is not
+
+This is an explainer for the offside law. It is not a VAR product, a betting tip, or the full Laws of the Game.
