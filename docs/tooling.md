@@ -26,6 +26,10 @@ Knip checks unused files, exports, dependencies, and unresolved imports using `k
 
 Fallow runs dead-code, duplication, and health analysis. Duplication thresholds and ignores use Fallow defaults until this codebase grows enough to need project-specific tuning.
 
+## Code Review (CodeRabbit)
+
+CodeRabbit reads `.coderabbit.config.ts`, which inherits the central `frostney/coderabbit` settings and the web-UI settings and excludes `.agents/skills/<name>/` from review for every skill listed in `skills-lock.json`. Those skills come from upstream through `bunx skills`, so review findings on them belong upstream. A skill under `.agents/skills` that the lock does not list is project-authored and stays reviewed. The config reads the lock through `skills-lock.yaml`, a symlink to `skills-lock.json`, because CodeRabbit's config sandbox imports `.yaml` but not `.json`. Biome, Knip, and Fallow ignore `.coderabbit.config.ts`: CodeRabbit evaluates it, not the app build.
+
 ## Markdown
 
 markdownlint uses `.markdownlint-cli2.jsonc` and excludes generated skill folders so vendor skill documentation does not block local project docs.
