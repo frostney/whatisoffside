@@ -1,11 +1,23 @@
 {
   "version": 1,
   "skills": {
+    "address-feedback": {
+      "source": "frostney/known-good-route",
+      "sourceType": "github",
+      "skillPath": "address-feedback/SKILL.md",
+      "computedHash": "6ab871d8b6b3df09db42a96e0fed714097d73ff617274cca01e7f3df46c0c1e8"
+    },
     "bleeding-edge": {
       "source": "frostney/known-good-route",
       "sourceType": "github",
       "skillPath": "bleeding-edge/SKILL.md",
       "computedHash": "baebab08abbb45881ef760958f16591cd2d74ebe7c1aa92bceea134a8ee45ee7"
+    },
+    "delivery-wait": {
+      "source": "frostney/known-good-route",
+      "sourceType": "github",
+      "skillPath": "delivery-wait/SKILL.md",
+      "computedHash": "4f495390612d3fb99f04b74ab324aa41f001ff05abfb2d689e0b26197fa96c9b"
     },
     "git-workflow": {
       "source": "frostney/known-good-route",
