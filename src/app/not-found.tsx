@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+// Next.js reads this export for the 404 route; Fallow 2.104.0 only tracks its default export.
+// fallow-ignore-next-line unused-export
 export const metadata: Metadata = {
   title: "Page not found",
   description: "This page could not be found.",
