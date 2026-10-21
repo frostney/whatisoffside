@@ -5,13 +5,13 @@
       "source": "frostney/known-good-route",
       "sourceType": "github",
       "skillPath": "bleeding-edge/SKILL.md",
-      "computedHash": "0cf6c794037010aac379691071c68e78dac34552a386d2b5b312ac03b60c8bd0"
+      "computedHash": "baebab08abbb45881ef760958f16591cd2d74ebe7c1aa92bceea134a8ee45ee7"
     },
     "git-workflow": {
       "source": "frostney/known-good-route",
       "sourceType": "github",
       "skillPath": "git-workflow/SKILL.md",
-      "computedHash": "55e021eca208a8e4052bba3bad273b6752506f88542bef298fa47bdc4b77365c"
+      "computedHash": "1c3b96f2f04e5330a7276e1502dd0aecd712732b0fb810969b6b429474663876"
     },
     "grill-with-docs": {
       "source": "mattpocock/skills",
@@ -35,19 +35,19 @@
       "source": "frostney/known-good-route",
       "sourceType": "github",
       "skillPath": "project-structure/SKILL.md",
-      "computedHash": "ca293d71705f1b1cafe609cd472ce1c9ee2ca780d26188c09f820916b103493f"
+      "computedHash": "93e683bf987fa15c67057d4bdbb0380c8624385cc7f455e44bd819cfc85a704e"
     },
     "react-stack": {
       "source": "frostney/known-good-route",
       "sourceType": "github",
       "skillPath": "react-stack/SKILL.md",
-      "computedHash": "a55e7ca6b6833cf5102f22cb5e4cbb6d1248c194eb1cdf6b11730806802079dd"
+      "computedHash": "60ec6da46ece07faf189ee8fd5d7787113d2503c0273555d660b0314cfab5b61"
     },
     "software-engineering-excellence": {
       "source": "frostney/known-good-route",
       "sourceType": "github",
       "skillPath": "software-engineering-excellence/SKILL.md",
-      "computedHash": "6b1b1fe89a77cc63ff566ab22d087888e0d846d05f0f042952a48a7050216f51"
+      "computedHash": "e6acbc5075d17a9c6c5bf023ccf29ee7a43cf5ee77072b763986e146276e93c8"
     }
   }
 }
